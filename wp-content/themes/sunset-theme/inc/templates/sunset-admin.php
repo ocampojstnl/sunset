@@ -1,7 +1,16 @@
-<h1>Sunset theme options</h1>
+<h1>Sunset Sidebar options</h1>
 <h3 class="title">Something to put, not important at all, just for demonstration purposes.</h3>
 <p>Customize sidebar options</p>
-<?php settings_errors();?>
+<?php settings_errors();
+
+$picture = esc_attr(get_option('profile_picture'));
+$firstName = esc_attr(get_option('first_name'));
+?>
+<!-- <div class="profile-picture" style="background-image: url('')"> -->
+<img id="profile-picture-general" src="<?php print $picture?>" alt="" width="100px" height="100px">
+https://www.youtube.com/watch?v=a8GwPJjGCO8&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=10
+</div>
+<!-- <img src="<?php print $picture; ?>" /> -->
 <form action="options.php" method="POST">
     <?php settings_fields('sunset-settings-group');?>
     <?php do_settings_sections('sunset')?>
